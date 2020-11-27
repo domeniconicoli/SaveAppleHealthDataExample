@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SaveAppleHealthDataExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZUe-iG-7Ce" userLabel="datePicker">
+                                <rect key="frame" x="0.0" y="69" width="414" height="216"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tj-Sn-CSS" userLabel="buttonSave">
+                                <rect key="frame" x="181" y="412" width="52" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="HWU-W0-QLI"/>
+                                    <constraint firstAttribute="width" constant="52" id="g5p-kN-Ytk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gch-1D-ct6"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hhq-ba-iNt" userLabel="textFieldValue">
+                                <rect key="frame" x="158.5" y="323" width="97" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="5AW-Hw-b0z"/>
+                                    <constraint firstAttribute="height" constant="34" id="Idh-Rm-4oq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Tj-Sn-CSS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="36e-eB-t6X"/>
+                            <constraint firstItem="7Tj-Sn-CSS" firstAttribute="top" secondItem="Hhq-ba-iNt" secondAttribute="bottom" constant="55" id="GoA-9R-9Ec"/>
+                            <constraint firstItem="ZUe-iG-7Ce" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q1L-4r-loI"/>
+                            <constraint firstItem="ZUe-iG-7Ce" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Unf-6l-Eh7"/>
+                            <constraint firstItem="ZUe-iG-7Ce" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z2G-eb-4SQ"/>
+                            <constraint firstItem="Hhq-ba-iNt" firstAttribute="top" secondItem="ZUe-iG-7Ce" secondAttribute="bottom" constant="38" id="cAz-Ji-hfe"/>
+                            <constraint firstItem="Hhq-ba-iNt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mGm-lv-oA0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="ZUe-iG-7Ce" id="Ioo-1v-Men"/>
+                        <outlet property="textFieldValue" destination="Hhq-ba-iNt" id="2Vh-rx-gsa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
 </document>

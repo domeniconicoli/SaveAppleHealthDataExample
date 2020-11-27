@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSHealthShareUsageDescription</key>
+    <string>"Please give us the reading permission to allow the app to work."</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>"Please give us the update permission to add data into Apple Health."</string>
 </dict>
 </plist>
